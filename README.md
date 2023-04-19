@@ -57,12 +57,15 @@ To run the code simply open your terminal/command prompt in that directory and r
 ```bash
 node app.py
 ```
-
 To avoid the need to manually stop and restart a Node.js application every time a change is made to the code, nodemon should be used. Open your terminal/command prompt in that directory and run the following command,
 ```bash
 nodemon app.js
 ```
 This saves time and effort, allowing you to focus on writing code and testing it, rather than worrying about restarting the application.
+
+### Test the website
+After starting the node, open a browser, type "*localhost:3000*" and hit enter.
+![Imgur](https://i.imgur.com/AXQMJ7Z.png "Website screenshot")
 
 [//]: #
 [Mailchimp's website]: <https://mailchimp.com/>
