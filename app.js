@@ -1,12 +1,12 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 const https = require("https");
 require("dotenv").config();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
-// app.use(express.static(__dirname)); // take files out of "public" folder or add "public/" where css and images paths are assigned in html file
+// app.use(express.static(__dirname)); // take files out of "public" folder or add "public/" where css, images and html paths are assigned in html file
 
 app.get("/", function(req, res){
     res.sendFile(__dirname+"/public/frontend/signup.html");
