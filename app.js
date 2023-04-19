@@ -9,7 +9,7 @@ app.use(express.static("public"));
 // app.use(express.static(__dirname)); // take files out of "public" folder or add "public/" where css and images paths are assigned in html file
 
 app.get("/", function(req, res){
-    res.sendFile(__dirname+"/signup.html");
+    res.sendFile(__dirname+"/public/frontend/signup.html");
 });
 
 app.post("/", function(req, res){
@@ -43,17 +43,17 @@ app.post("/", function(req, res){
             jdata = JSON.parse(data);
             if (response.statusCode === 200){
                 if(jdata.error_count === 0){
-                    res.sendFile(__dirname+"/success.html");
+                    res.sendFile(__dirname+"/public/frontend/success.html");
                 }
                 else if (jdata.error_count > 0 && jdata.errors[0].error_code === 'ERROR_CONTACT_EXISTS'){
-                    res.sendFile(__dirname+"/alreadyExists.html");
+                    res.sendFile(__dirname+"/public/frontend/alreadyExists.html");
                 }
                 else{
-                    res.sendFile(__dirname+"/failure.html");
+                    res.sendFile(__dirname+"/public/frontend/failure.html");
                 }
             }
             else{
-                res.sendFile(__dirname+"/failure.html");
+                res.sendFile(__dirname+"/public/frontend/failure.html");
             }
             console.log(jdata);
         });
@@ -66,7 +66,7 @@ app.post("/", function(req, res){
 
 
 app.use((req, res, next) => {
-    res.status(404).sendFile(__dirname+"/404.html");
+    res.status(404).sendFile(__dirname+"/public/frontend/404.html");
 });
 
 app.post("/failure", function(req, res){
